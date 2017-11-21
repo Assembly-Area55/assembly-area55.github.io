@@ -1,6 +1,5 @@
 ---
 title: Assembly - Area 55
-permalink: intro.html
 ---
 # assembly-area55.github.io
 
