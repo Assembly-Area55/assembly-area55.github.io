@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Iniciando com o NASM
-permalink: /nasm/
+permalink: /nasm
 ---
 
 # Nasm - The Netwide Assembler Project

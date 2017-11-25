@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /nasm-output
 ---
 
 # Formatos de saida do nasm.

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Conhecendo a Linguagem Assembly
+permalink: /linguagem/
 ---
 
 # Linguagem assembly
