@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Requisitos
 
 Os Requisitos que serão descritos envolvem o sistema operacional Debian / Ubuntu, para outros sistemas operacionais  costumam ser semelhantes em caso de dúvidas entre em contato.

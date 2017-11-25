@@ -1,3 +1,9 @@
+---
+layout: default
+title: Iniciando com o NASM
+permalink: /nasm/
+---
+
 # Nasm - The Netwide Assembler Project
 
 Nasm é a ferramenta (compilador) utilizado para transformar nosso código assembly em Objeto,
@@ -30,7 +36,7 @@ Bem vamos a um simples porem bem didático do uso do template apresentado acima,
 
 ```
 SECTION .data
-  mensagem  db  'Olá, Mundo!', 0Ah
+  mensagem  db  'Olá, Mundo!', 0xa, 0x0d
 
 SECTION .text
 
@@ -38,7 +44,7 @@ global _start:
 
 _start:
 
-  mov edx, 12         ; Tamanho da mensagem
+  mov edx, 13         ; Tamanho da mensagem
   mov ecx, mensagem   ; Mensagem a apresentar
   mov ebx, 1          ; File descriptor (STDOUT)
   mov eax, 4          ; syscall 4 (sys_write)
@@ -51,7 +57,18 @@ _start:
 Copie o código acima ou baixe para testar executar a compilação.
 
 ```
-wget https://raw.githubusercontent.com/Assembly-Area55/assembly-area55.github.io/master/src/hello.asm
-nasm -f elf hello.asm`
-ld -m elf_i386 -s -o hello hello.o
+$ wget https://raw.githubusercontent.com/Assembly-Area55/assembly-area55.github.io/master/src/hello.asm
+$ nasm -f elf hello.asm`
+$ ld -m elf_i386 -s -o hello hello.o
 ```
+
+Feito isso teremos 3 arquivos no diretório, *hello.asm*, *hello.o* (Arquivo objeto), e *hello* (Arquivo ELF).
+
+Executando o arquivo teremos a seguinte saida:
+
+```
+$ ./hello
+Olá, Mundo!
+```
+
+Mais códigos serão vistos posteriormente, no momento para mais informações acesso o site [NASM](http://www.nasm.us).

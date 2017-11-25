@@ -1,5 +1,5 @@
 SECTION .data
-  mensagem  db  'Olá, Mundo!', 0xa  ; Mensagem a ser apresentada.
+  mensagem  db  'Olá, Mundo!', 0xa, 0x0d  ; Mensagem a ser apresentada.
 
 SECTION .text
 
@@ -7,7 +7,7 @@ global _start:
 
 _start:
 
-  mov edx, 12         ; Tamanho da mensagem
+  mov edx, 13         ; Tamanho da mensagem, incluindo os valores cr/lf
   mov ecx, mensagem   ; Mensagem a apresentar
   mov ebx, 1          ; File descriptor (STDOUT)
   mov eax, 4          ; syscall 4 (sys_write)
