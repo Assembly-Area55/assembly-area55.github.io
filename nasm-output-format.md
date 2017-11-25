@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Formatos de saida do nasm.
 
 O nasm nos permite compilar o código para diversas plataformas e formatos diferente como pode ser observado abaixo:
