@@ -1,11 +1,11 @@
 ---
 layout: default
-permalink: /nasm-output
+permalink: /nasm-output-format
 ---
 
-# Formatos de saida do nasm.
+# Formatos de saida do NASM.
 
-O nasm nos permite compilar o código para diversas plataformas e formatos diferente como pode ser observado abaixo:
+O NASM nos permite compilar o código para diversas plataformas e formatos diferente como pode ser observado abaixo:
 
 ```
 valid output formats for -f are (`*' denotes default):
