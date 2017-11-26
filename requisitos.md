@@ -12,5 +12,5 @@ Softwares que sempre iremos utilizar, nasm compilador, gcc, strace, ld eventualm
 Para Debian e Ubuntu proceda a instalação dos pacotes:
 
 ```
-$ sudo apt-get install build-essential nasm strace g++-multilib libc6-dev-i386 bsdmainutils`
+$ sudo apt-get install build-essential nasm strace g++-multilib libc6-dev-i386 bsdmainutils
 ```
