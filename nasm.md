@@ -26,7 +26,7 @@ Nesta sessão é onde ocorre a mágica propriamente dita, nesta sessão colocamo
 
 Outra sessão importante que devemos declarar apenas no arquivo principal de seu código o que inicializa o programa, neste caso temos duas formas de declarar o tal **inicializador**, por padrão fazemos uso do **global _start**
 
-O **global _start** é usado quando compilamos o código com o NASM e linkamos com a ferramenta ld (disponível no pacote binutils).
+O **global _start** é usado quando compilarmos o código com o NASM e linkamos com a ferramenta ld (disponível no pacote binutils).
 
 Outra forma de inicializar o código seria utilizando o inicializado como global main:
 
@@ -83,7 +83,7 @@ $ nasm -f elf hello.asm
 $ ld -m elf_i386 -s -o hello hello.o
 ```
 
-Feito isso teremos 3 arquivos no diretório, *hello.asm*, *hello.o* (Arquivo objeto), e *hello* (Arquivo ELF).
+Feito isso teremos 3 arquivos no diretório, **hello.asm**, **hello.o** (Arquivo objeto), e **hello** (Arquivo ELF).
 
 Executando o arquivo teremos a seguinte saida:
 
@@ -91,5 +91,22 @@ Executando o arquivo teremos a seguinte saida:
 $ ./hello
 Olá, Mundo!
 ```
+
+Agora vamos entender o que foi feito?
+
+1. Inicialmente foi feito o download do código, mas recomendo mesmo que faça a digitação isso ajuda muito na assimilação de uma nova linguagem.
+2. Após a criação do arquivo executamos o comando **nasm -f elf hello.asm** <br>
+  O parametro -f indica o tipo de executavel de o nasm irá gerar, mais sobre os formatos veja aqui no site o [manual](/nasm-output-format) sobre isso.
+3. Feito a compilação, que é o processo de gerar um código intermediario, ou como chamamos geramos um objeto.
+  Faremos agora o processo de linkeditar, que é o processo de transformar nosso código intermediário em um
+  executável, neste passo executamos o seguinte comando:<br>
+  **ld -m elf_i386 -s -o hello hello.o**
+
+Onde:
+
+  |-m elf_i386 | Serve para indicar o formato que será transformado o objeto. |
+  | -s | Retira informações do simbolos usados para debug. |
+  | -o |Nome do executável final. |
+  | hello.o | Nome dos arquivos objetos usados para formar o executavel. |
 
 Mais códigos serão vistos posteriormente, no momento para mais informações acesso o site [NASM](http://www.nasm.us).
