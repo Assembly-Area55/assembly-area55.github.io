@@ -9,4 +9,4 @@ Este site está sendo desenvolvimento no intuito de servir de base de consulta p
 
 1. [Instalando o ambiente de desenvolvimento](/requisitos)
 1. [Conhecendo a linguagem assembly](/linguagem)
-1. [Conhecendo o NASM](/nasm/)
+1. [Conhecendo o NASM](/nasm)
