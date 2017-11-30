@@ -12,6 +12,20 @@ A linguagem Assembly é conhecida como sendo uma linguagem de baixo nível, ao c
 
 Assembly é uma linguagem de baixo nível devido a ter um conjunto de instruções básicos como exemplo o mov, out, in, pop, push, add.
 
-Isso significa que suas instruções são traduzidas quase que diretamente para o processador, diferente das linguagens de alto nivel onde suas instruções são constituidas por multiplas instruções de baixo nível.
+Isso significa que suas instruções são traduzidas quase que diretamente para o processador, diferente das linguagens de alto nível onde suas instruções são constituídas por multiplas instruções de baixo nível.
 
 * Introdução a Linguagem
+
+* Terminologia e Conceitos
+
+* Tipos de dados
+
+* Sessões
+
+* Operações Aritméticas
+
+* Controle de Fluxo
+
+* Registradores
+
+![Registradores]({{'/images/registers.png' | absolute_url}})

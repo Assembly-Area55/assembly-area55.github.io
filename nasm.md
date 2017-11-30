@@ -96,7 +96,7 @@ Agora vamos entender o que foi feito?
 
 1. Inicialmente foi feito o download do código, mas recomendo mesmo que faça a digitação isso ajuda muito na assimilação de uma nova linguagem.
 2. Após a criação do arquivo executamos o comando **nasm -f elf hello.asm** <br>
-  Feito a compilação, que é o processo de gerar um código intermediário, ou como chamamos geramos um objeto.
+  Feito a compilação, que é o processo de gerar um código intermediário, ou como chamamos geramos um objeto; como no caso de nosso exemplo; hello.o<br>
   O parametro -f indica o tipo de executável que o nasm irá gerar, mais sobre os formatos veja aqui no site o [manual](/nasm-output-format) sobre isso.
 3. Faremos agora o processo de linkeditar, que é o processo de transformar nosso código intermediário em um
   executável, neste passo executamos o seguinte comando:<br>
