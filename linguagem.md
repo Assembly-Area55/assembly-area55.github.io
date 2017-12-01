@@ -6,15 +6,19 @@ permalink: /linguagem/
 
 # Linguagem assembly
 
+* Introdução a Linguagem
+
 A linguagem Assembly é conhecida como sendo uma linguagem de baixo nível, ao contrário de outras linguagens como Basic, C, Pascal que já são consideradas de alto nível.
 
-* O que determina uma linguagem de baixo nível?
+O que determina uma linguagem de baixo nível?
 
 Assembly é uma linguagem de baixo nível devido a ter um conjunto de instruções básicos como exemplo o mov, out, in, pop, push, add.
 
 Isso significa que suas instruções são traduzidas quase que diretamente para o processador, diferente das linguagens de alto nível onde suas instruções são constituídas por multiplas instruções de baixo nível.
 
-* Introdução a Linguagem
+Podemos programar escrevendo diretamente em binário, ou em sistema hexadecimal, mas seria algo muito confuso e a possibilidade de haver erros de codificação seriam infinitamente maiores.
+
+Neste ponto entra a linguagem Assembly, onde temos um conjunto de notação ou símbolos (mnemônicos) para facilitar o entendimento de humanos.
 
 * Terminologia e Conceitos
 
@@ -26,6 +30,28 @@ Isso significa que suas instruções são traduzidas quase que diretamente para 
 
 * Controle de Fluxo
 
-* Registradores
+* [Registradores](#registradores)
+
+Registradores são areas especiais dentro do processador que são mais rápidas que operandos de memória.
+Como vamos trabalhar com o processador Intel, existem apenas 8 registradores de uso geral.
+
+EAX, EBX, ECX, EDX, ESI, EDI, ESP, EBP
+
+Os registradores ESP e EBP só devem ser usados preferencialmente para trabalhar com a pilha (Stack).
+
+Nos registradores de uso geral (Exceto ESI e EDI) é permitido usar 3 modos de acesso diferentes, ilustrados pela figura abaixo.
+
+
+![IMG]({{'images/img13.jpg' | absolute_url}})
+
+* [EAX](#EAX) - Chamado de "ACUMULADOR", geralmente é usado para operações Aritméticas e para guardar resultados.
+* [EBX](#EBX) - Chamado de "BASE", geralmente usado para armazenar dados e para endereços de memória.
+* [ECX](#ECX) - Chamado de "CONTADOR", como o nome já diz é usado como contador, principalmente para controlar loops.
+* [EDX](#EDX) - Chamado de registrador de "DADOS" é usado geralmente para guardar o endereço de uma variável na memória.
+
+* ESI e EDI - Respectivamente "Source Index" e "Destination Index", são menos usados do que os registradores usados anteriormente.
+Geralmente usa-se ESI e EDI para movimentação de dados, com ESI guardando o endereço da fonte de uma variável e EDI guardando o endereço de destino. Não podem ser acessados em nível de Byte.
+
+* ESP E EBP - Respectivamente "Stack Pointer" e "Base Pointer", só podem ser usados para manipulação da pilha. O registrador ESP guarda a referência para o topo da pilha, enquanto o registrador EBP é usado para "ANDAR" pela pilha.
 
 ![Registradores]({{'/images/registers.png' | absolute_url}})
