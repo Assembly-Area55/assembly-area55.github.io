@@ -9,7 +9,12 @@ Este site está sendo desenvolvimento no intuito de servir de base de consulta p
 
 1. [Instalando o ambiente de desenvolvimento](/requisitos)
 2. [Conhecendo a linguagem assembly](/linguagem)
-* Registradores
+* Terminologia e Conceitos
+* Tipos de dados
+* Sessões
+* Operações Aritméticas
+* Controle de Fluxo
+* [Registradores](/linguagem#registradores)
 3. [Conhecendo o NASM](/nasm)
 4. Utilizando Makefile
 5. Bootloaders
