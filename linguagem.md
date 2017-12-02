@@ -24,7 +24,26 @@ Neste ponto entra a linguagem Assembly, onde temos um conjunto de notação ou s
 
 * Tipos de dados
 
+Os tipos de dados fundamentais da arquitetura IA-32 são bytes, words, doublewords, quadwords, e double quadwords. Como mostrado na figura abaixo.
+
+![Data Types - Intel]({{'images/datatypes.png' | absolute_url}})
+
+| Tipo | Bits | Bytes | Range |
+| Bit |  1 | | 2 |
+| Nibble | 4 | | 16 |
+| Byte | 8 | 1 | 256 |
+| Word | 16 | 2 | 65.536 |
+| Doubleword | 32 bits | 4 | 4.294.967.296 |
+| Quadword | 64 bits | 8 | |
+| Double Quadword | 128 bits | 16 | | 
+
+Um subset de instruções da arquitetura IA-32 opera estes dados fundamentais sem qualquer operando adicional.
+
+O tipo de dado Quadword foi introduzido na arquitetura IA-32 a partir do processador Intel 486;
+O tipo de dado Double Quadrword foi introduzido a partir do processador Intel Pentium III com a extensão SSE.
+
 * Sessões
+>
 
 * Operações Aritméticas
 
@@ -52,6 +71,21 @@ Nos registradores de uso geral (Exceto ESI e EDI) é permitido usar 3 modos de a
 * ESI e EDI - Respectivamente "Source Index" e "Destination Index", são menos usados do que os registradores usados anteriormente.
 Geralmente usa-se ESI e EDI para movimentação de dados, com ESI guardando o endereço da fonte de uma variável e EDI guardando o endereço de destino. Não podem ser acessados em nível de Byte.
 
-* ESP E EBP - Respectivamente "Stack Pointer" e "Base Pointer", só podem ser usados para manipulação da pilha. O registrador ESP guarda a referência para o topo da pilha, enquanto o registrador EBP é usado para "ANDAR" pela pilha.
+* ESP e EBP - Respectivamente "Stack Pointer" e "Base Pointer", só podem ser usados para manipulação da pilha. O registrador ESP guarda a referência para o topo da pilha, enquanto o registrador EBP é usado para "ANDAR" pela pilha.
+
+Atualmente todos os programas fazem uso da pilha em tempo de execução, porem nas linguagens de alto nível é algo que não necessitamos nos preocupar, em como se comporta a pilha.
+
+Já em Assembly, o programador necessita saber trabalhar com a pilha pois ela é uma ferramenta importante.
+
+A pilha é uma área de dados existente na memória em tempo de execução, no qual seu programa pode armazenar dados temporariamente.
+
+### As principais funcionalidades da pilha são:
+
+* Preservar valores de registradores em funções.
+* Preservar dados na memória.
+* Transferir dados sem usar registradores.
+* Reverter a ordem dos dados.
+* Chamar outras funções e depois retornar.
+* Passar parâmetros para funções.
 
 ![Registradores]({{'/images/registers.png' | absolute_url}})
