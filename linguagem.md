@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Conhecendo a Linguagem Assembly
-permalink: /linguagem/
+permalink: /linguagem.html
 ---
 
 # Linguagem assembly
@@ -35,7 +35,7 @@ Os tipos de dados fundamentais da arquitetura IA-32 são bytes, words, doublewor
 | Word | 16 | 2 | 65.536 |
 | Doubleword | 32 bits | 4 | 4.294.967.296 |
 | Quadword | 64 bits | 8 | |
-| Double Quadword | 128 bits | 16 | | 
+| Double Quadword | 128 bits | 16 | |
 
 Um subset de instruções da arquitetura IA-32 opera estes dados fundamentais sem qualquer operando adicional.
 
@@ -43,7 +43,12 @@ O tipo de dado Quadword foi introduzido na arquitetura IA-32 a partir do process
 O tipo de dado Double Quadrword foi introduzido a partir do processador Intel Pentium III com a extensão SSE.
 
 * Sessões
->
+
+  * Este descrição encontra-se em [Iniciando com o NASM](/nasm)
+
+* Transferência de dados.
+
+  * Este tópico encontra-se em [Data Transfer Instructions](/data-transfer-instructions)
 
 * Operações Aritméticas
 

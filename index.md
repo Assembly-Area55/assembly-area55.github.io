@@ -21,3 +21,4 @@ Este site está sendo desenvolvimento no intuito de servir de base de consulta p
   - MBR
   - GRUB
   - EFI
+6. Links relevantes

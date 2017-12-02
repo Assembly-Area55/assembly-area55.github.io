@@ -8,7 +8,7 @@ permalink: /nasm
 
 O Nasm Netwide Assembler, é a ferramenta (compilador) livre para plataforma x86, pode ser usado para compilar códigos 16, 32 e 64 bits.
 
-Necessáriamente faz-se o uso de um link-editor para transformar o código objeto gerado pelo compilador em um binário de acordo com o sistema operacional que estivermos desenvolvendo, os formatos de saida do nasm podem ser vistos pelo manual "man nasm", para facilitar segue o trecho com os formatos de saida. [manual](/nasm-output-format)
+Necessáriamente faz-se o uso de um link-editor para transformar o código objeto gerado pelo compilador em um binário de acordo com o sistema operacional que estivermos desenvolvendo, os formatos de saida do nasm podem ser vistos pelo manual "*[man nasm](https://linux.die.net/man/1/nasm){:target='_blank'}*", para facilitar segue o trecho com os formatos de saida. [manual](/nasm-output-format)
 
 Como toda linguagem de programação o NASM requer que se código fonte siga um padrão de formatação:
 
@@ -85,7 +85,7 @@ $ ld -m elf_i386 -s -o hello hello.o
 
 Feito isso teremos 3 arquivos no diretório, **hello.asm**, **hello.o** (Arquivo objeto), e **hello** (Arquivo ELF).
 
-Executando o arquivo teremos a seguinte saida:
+Executando o arquivo teremos a seguinte saída:
 
 ```
 $ ./hello
@@ -107,6 +107,6 @@ Onde:
   |-m elf_i386 | Serve para indicar o formato que será transformado o objeto. |
   | -s | Retira informações do simbolos usados para debug. |
   | -o |Nome do executável final. |
-  | hello.o | Nome dos arquivos objetos usados para formar o executavel. |
+  | hello.o | Nome dos arquivos objetos usados para formar o executável. |
 
-Mais códigos serão vistos posteriormente, no momento para mais informações acesso o site [NASM](http://www.nasm.us).
+Mais códigos serão vistos posteriormente, no momento para mais informações acesso o site [NASM](http://www.nasm.us){:target='_blank'}.
