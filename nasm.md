@@ -18,7 +18,7 @@ O código do NASM é composto por sessões como será descrito abaixo.
 Trata-se da sessão onde iremos iniciar os dados, algo como as constantes em linguagens de alto nível
 
 * **SECTION .bss**
-Sessão onde serão declaradas as variaveis dinâmicas que serão alteradas no decorrer do desenvolvimento.
+Sessão onde serão declaradas as variáveis dinâmicas que serão alteradas no decorrer do desenvolvimento.
 
 * **SECTION .text**
 Nesta sessão é onde ocorre a mágica propriamente dita, nesta sessão colocamos nosso código.
@@ -32,7 +32,7 @@ Outra forma de inicializar o código seria utilizando o inicializado como global
 
 Este inicializador é utilizado para quando vamos fazer uso do GCC, por padrão o GCC ao compilar o código ele busca em seu código pre-processado o inicializador **global main**, isso iremos ver mais a frente como utilizar NASM acessando a GLIBC e fazendo uso dos recursos já desenvolvidos.
 
-Veremos também os prós e contras de se utilizar a GLIBC, abaixo um template para quando for iniciar a programar.
+Veremos também os prós e contras de se utilizar a GLIBC, abaixo um template para quando formos iniciar a programar.
 
 ```
 SECTION .data
