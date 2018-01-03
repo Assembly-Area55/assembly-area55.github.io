@@ -14,11 +14,11 @@ SECTION .text
 global _start
 
 _start:
-    mov edx, len
-    mov ecx, aborges
-    mov ebx, 1
-    mov eax, 4
-    int 0x80
+    mov edx, len      ; Tamanho da string.
+    mov ecx, aborges  ; Conteúdo da mensagem.
+    mov ebx, 1        ; 0 = NADA; 1 = STDOUT (Saída); 2 = STDIN (Entrada)
+    mov eax, 4        ; Chamada da syscall sys_write
+    int 0x80          ; Executa a função.
 
     mov eax, 1
     int 0x80
