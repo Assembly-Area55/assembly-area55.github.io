@@ -78,7 +78,7 @@ _start:
 Copie o código acima ou baixe para testar executar a compilação.
 
 ```
-$ wget https://raw.githubusercontent.com/Assembly-Area55/assembly-area55.github.io/master/src/hello.asm
+$ wget https://raw.githubusercontent.com/Assembly-Area55/assembly-area55.github.io/master/src/hello/hello.asm
 $ nasm -f elf hello.asm
 $ ld -m elf_i386 -s -o hello hello.o
 ```
@@ -105,8 +105,8 @@ Agora vamos entender o que foi feito?
 Onde:
 
   |-m elf_i386 | Serve para indicar o formato que será transformado o objeto. |
-  | -s | Retira informações do simbolos usados para debug. |
-  | -o |Nome do executável final. |
+  | -s | Retira informações do simbolos usados para debug, caso necessite remova o -s da compilação |
+  | -o | Nome do executável final. |
   | hello.o | Nome dos arquivos objetos usados para formar o executável. |
 
 Mais códigos serão vistos posteriormente, no momento para mais informações acesso o site [NASM](http://www.nasm.us){:target='_blank'}.
