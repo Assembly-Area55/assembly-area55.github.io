@@ -1,0 +1,1 @@
+extern detect_vmware
