@@ -22,3 +22,7 @@ Este site está sendo desenvolvimento no intuito de servir de base de consulta p
   - GRUB
   - EFI
 6. Links relevantes
+7. Exemplos:
+  - [Uppercase](https://github.com/Assembly-Area55/assembly-area55.github.io/blob/master/src/uppercase.asm)
+  - [Getpid](https://github.com/Assembly-Area55/assembly-area55.github.io/tree/master/src/getpid)
+  - [Cpuid](https://github.com/Assembly-Area55/assembly-area55.github.io/tree/master/src/cpuid)
