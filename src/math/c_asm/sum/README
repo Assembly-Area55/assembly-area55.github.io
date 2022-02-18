@@ -1,5 +1,0 @@
-Para compilar o código em plataforma x86_64 requer a instalação do suporte ao binários 32bits.
-
-No Ubuntu instale o seguinte pacote.
-
-$ sudo apt install libc6-dev-i386
