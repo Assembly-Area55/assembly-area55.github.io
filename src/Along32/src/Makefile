@@ -34,7 +34,7 @@ ASMFLAGS =
 INSTDIR = /usr/lib
 
 # Linker is ld
-LINKER = ld -m elf_i386
+LINKER = ld
 
 # Share libbrary option for linker
 SHLIB = -shared
