@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /index
+---
+
 # **global _start**
 
 Este site está sendo desenvolvido como uma base de consulta para quem deseja aprender a linguagem de programação Assembly.
