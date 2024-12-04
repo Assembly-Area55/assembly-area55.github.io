@@ -22,7 +22,7 @@ leitura:
         mov eax, 3
         mov ebx, 0
         mov ecx, Buff
-        mov edx,1
+        mov edx, 1
         int 80h
 
         cmp eax, 0
