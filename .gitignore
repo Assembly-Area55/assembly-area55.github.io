@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 
 *.o
+.vscode/settings.json
