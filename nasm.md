@@ -34,7 +34,7 @@ Este inicializador é utilizado para quando vamos fazer uso do GCC, por padrão 
 
 Veremos também os prós e contras de se utilizar a GLIBC, abaixo um template para quando formos iniciar a programar.
 
-```
+```assembly
 SECTION .data
 ; Dados inicializados (constantes)
 
@@ -55,7 +55,7 @@ _start:
 
 Bem vamos a um simples porem bem didático do uso do template apresentado acima, vamos ao famoso hello world em versão assembly 32bits.
 
-```
+```assembly
 SECTION .data
   mensagem  db  'Olá, Mundo!', 0xa, 0x0d
 
