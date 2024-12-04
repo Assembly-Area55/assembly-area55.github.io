@@ -1,31 +1,23 @@
 sprint:
-segment .text
-
 	push edx
 	push ecx
 	push ebx
 	push eax
+
 	mov ebx, stdout
 	mov eax, sys_write
-	call _sysenter
+	int 80h
 
-	pop edx
-	pop ecx
-	pop ebx
 	pop eax
+	pop ebx
+	pop ecx
+	pop edx
 	ret
 
 quit:
 segment .text
 	mov eax, sys_exit
 	xor ebx, ebx
-	call _sysenter
+	int 80h
 	ret
 
-_sysenter:
-segment .text
-	push edx
-	push ecx
-	push ebp
-	mov ebp, esp
-	sysenter

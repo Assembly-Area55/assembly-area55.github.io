@@ -1,26 +1,32 @@
 detect_vmware:
-	pushad
+    pushad
 
-	mov eax, 'VMXh'
-	xor ebx, ebx
-	mov ecx, 10
-	mov edx, 'VX'
+    ; Verifica se a porta de I/O está dentro de um intervalo válido
+    mov eax, edx
+    cmp eax, 0x1000       ; Exemplo: verifique se edx está dentro de um intervalo seguro
+    jl valid_port
+    cmp eax, 0xFFFF
+    jg valid_port
+    mov eax, 0            ; Se estiver fora do intervalo, saia
+    jmp vmware_done
 
-	in eax, dx
+valid_port:
+    mov eax, 'VMXh'       ; Configura o valor de 'VMXh'
+    xor ebx, ebx
+    mov ecx, 10
+    mov edx, 'VX'         ; Porta de I/O (ajuste conforme necessário)
 
-	cmp ebx, 'VMXh'
+    ; Tenta acessar a porta de I/O
+    in eax, dx
 
-	jne notdetect
-	jmp final
+    cmp ebx, 'VMXh'       ; Verifica a resposta
+    jne not_vmware
+    mov eax, 1            ; VM detectada
+    jmp vmware_done
 
-notdetect:
-		mov edx, msg.detectlen
-		mov ecx, msg.detect
-		call sprint
-		call quit
+not_vmware:
+    mov eax, 0            ; Não é uma VM
 
-final:
-
-		call quit
-
-		popad
+vmware_done:
+    popad
+    ret
