@@ -5,32 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
-{% seo %}
+    {% seo %}
   </head>
 
   <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container site-header__inner">
+          <div class="site-brand">
+            <a class="site-brand__home" href="{{ '/' | relative_url }}">
+              <span class="site-brand__prompt">_</span>
+              <span>{{ site.title | default: site.github.repository_name }}</span>
+            </a>
+            <p class="site-brand__tagline">{{ site.description | default: site.github.project_tagline }}</p>
+          </div>
 
-    <header>
-      <div class="container">
-        <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+          <nav class="site-actions" aria-label="Atalhos principais">
+            <a class="btn" href="{{ '/' | relative_url }}">Início</a>
+            <a class="btn" href="{{ '/requisitos' | relative_url }}">Começar</a>
+            <a class="btn btn-github" href="{{ site.repository_url | default: site.github.repository_url }}">Repositório</a>
+          </nav>
+        </div>
+      </header>
 
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="/index" class="btn">Página Principal</a>
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+      <div class="container layout-grid">
+        <aside class="sidebar" aria-label="Mapa do curso">
+          <div class="sidebar__panel">
+            <p class="sidebar__eyebrow">Mapa do curso</p>
+            {% for group in site.data.navigation %}
+              <section class="sidebar__group">
+                <h2>{{ group.title }}</h2>
+                <ul class="sidebar__links">
+                  {% for item in group.links %}
+                    {% assign item_href = item.url %}
+                    {% unless item.external %}
+                      {% assign item_href = item.url | relative_url %}
+                    {% endunless %}
+                    <li>
+                      <a href="{{ item_href }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.label }}</a>
+                      {% if item.description %}
+                        <span>{{ item.description }}</span>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </section>
+            {% endfor %}
+          </div>
+        </aside>
+
+        <main class="content-panel">
+          <article id="main_content" class="content-body">
+            {{ content }}
+          </article>
+        </main>
       </div>
-    </header>
 
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+      <footer class="site-footer">
+        <div class="container site-footer__inner">
+          <p>Material aberto para estudo de Assembly, NASM e construção de exemplos progressivos.</p>
+          <p>Base publicada em GitHub Pages, agora preparada para seguir evoluindo.</p>
+        </div>
+      </footer>
     </div>
 
     {% if site.google_analytics %}

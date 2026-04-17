@@ -22,7 +22,7 @@ Embora seja possível programar em binário ou hexadecimal, essas abordagens sã
 
 Na arquitetura IA-32, os tipos de dados fundamentais incluem **bytes**, **words**, **doublewords**, **quadwords** e **double quadwords**. Estes tipos de dados variam em tamanho e capacidade de armazenamento, conforme mostrado na tabela abaixo:
 
-![Tipos de Dados - Intel]({{'images/datatypes.png' | absolute_url}})
+![Representação de tipos inteiros]({{'images/datatypes.png' | absolute_url}})
 
 | **Tipo**                | **Tamanho (Bits)** | **Tamanho (Bytes)** | **Faixa de Valores**  |
 |-------------------------|--------------------|---------------------|-----------------------|

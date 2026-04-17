@@ -6,35 +6,35 @@ permalink: /using-makefile-1
 
 # Estrutura do Makefile
 
-Vamos conhecer um pouco da estrutura do Makefile. Ele é composto basicamente por regras (rules).
-Cada regra contém 3 elementos, Alvo (target), pré-requisitos e instruções.
+O `Makefile` é organizado em **regras**. Cada regra descreve como um arquivo deve ser gerado a partir de outros arquivos e quais comandos precisam ser executados para isso.
+
+De forma geral, cada regra possui três partes:
+
+- **alvo** (*target*): o arquivo ou ação que queremos gerar;
+- **pré-requisitos** (*prerequisites*): os arquivos necessários para gerar esse alvo;
+- **instruções** (*recipe*): os comandos executados pelo `make`.
 
 ```
-# Alvo        Pré-requisitos
-target ... : prerequisites ...
-        # Instruções
-        recipe 0
-        recipe 1
-        recipe 2
-        ...
+# alvo        pré-requisitos
+target: prerequisites
+	recipe
 ```
 
-Regras:
+## Entendendo uma regra
 
-Cada regra é composta por um alvo, cada alvo possui seus pré-requisitos seguidos de seus comandos responsáveis por gerar seu target (Alvo).
+Quando o `make` encontra uma regra, ele verifica se o alvo já existe e se está atualizado em relação aos seus pré-requisitos. Se o alvo não existir, ou se algum pré-requisito for mais recente, os comandos da regra serão executados.
 
-* target: é o nome do arquivo que será gerado através das instruções (recipe), por exemplo um arquivo executável, biblioteca ou objeto.
+- `target`: é o nome do arquivo que será gerado, como um executável, objeto ou biblioteca.
+- `prerequisites`: são os arquivos necessários para construir o alvo, como `.asm`, `.c`, `.h` ou `.inc`.
+- `recipe`: são os comandos usados para produzir o alvo.
 
-* prerequisites: são os arquivos .c .asm .h .inc ou quaisquer outros arquivos necessários para se gerar o alvo.
+## Exemplo prático
 
-* Instruções: são os comandos ou macros utilizados para gerar o alvo.
+Vamos usar novamente o exemplo do clássico `hello.asm`.
 
-Um exemplo que poderá ser utilizado na manutenção de seus códigos, vamos utilizar o bom e velho Hello World.
-
-Makefile
-```
+```makefile
 hello.o: hello.asm
-	 nasm -f elf hello.asm
+	nasm -f elf32 -o hello.o hello.asm
 
 hello: hello.o
 	ld -m elf_i386 -o hello hello.o
@@ -43,10 +43,30 @@ clean:
 	rm -f hello.o hello
 ```
 
-Ao criar o Makefile com o conteúdo acima, execute em seu terminal na pasta criada anteriormente com o código do hello.asm.
+Nesse exemplo:
 
-Digite um simples *make* e verá a magica acontecer.
+- a regra `hello.o: hello.asm` monta o código Assembly e gera o arquivo objeto `hello.o`;
+- a regra `hello: hello.o` liga o objeto e gera o executável `hello`;
+- a regra `clean` remove os arquivos gerados durante o processo.
 
+## Executando o Makefile
 
+Depois de criar o `Makefile` no mesmo diretório do arquivo `hello.asm`, basta executar:
 
-| [Anterior](/using-makefile) | [Principal](/index) | Próximo |
+```bash
+make
+```
+
+O `make` executará a primeira regra principal do arquivo e gerará o executável `hello`.
+
+Se quiser limpar os arquivos produzidos durante o build, execute:
+
+```bash
+make clean
+```
+
+## Observação importante
+
+Nos comandos do `Makefile`, cada linha de instrução deve começar com uma **tabulação real**. Se você usar espaços no lugar de `TAB`, o `make` poderá acusar erro.
+
+| [Anterior](/using-makefile) | [Principal](/) | Próximo |

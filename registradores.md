@@ -4,41 +4,63 @@ title: Registradores
 permalink: /registradores
 ---
 
-Registradores são areas especiais dentro do processador que são mais rápidas que operandos de memória.
-Como vamos trabalhar com o processador Intel, existem apenas 8 registradores de uso geral.
+# Registradores na arquitetura IA-32
 
-EAX, EBX, ECX, EDX, ESI, EDI, ESP, EBP
+Registradores são áreas internas do processador usadas para armazenar valores temporários durante a execução do programa. O acesso a eles é muito mais rápido do que o acesso à memória, por isso são centrais em qualquer programa escrito em Assembly.
 
-Os registradores ESP e EBP só devem ser usados preferencialmente para trabalhar com a pilha (Stack).
+Neste material, vamos trabalhar principalmente com os registradores de uso geral da arquitetura **IA-32**:
 
-Nos registradores de uso geral (Exceto ESI e EDI) é permitido usar 3 modos de acesso diferentes, ilustrados pela figura abaixo.
+`EAX`, `EBX`, `ECX`, `EDX`, `ESI`, `EDI`, `ESP` e `EBP`
 
+## Acessando partes dos registradores
 
-![IMG]({{'images/img13.jpg' | absolute_url}})
+Em alguns registradores é possível acessar apenas uma parte do seu conteúdo. Isso é muito útil quando queremos trabalhar com valores de 8, 16 ou 32 bits sem precisar alterar todo o registrador.
 
-* [EAX](#EAX) - Chamado de "ACUMULADOR", geralmente é usado para operações Aritméticas e para guardar resultados.
-* [EBX](#EBX) - Chamado de "BASE", geralmente usado para armazenar dados e para endereços de memória.
-* [ECX](#ECX) - Chamado de "CONTADOR", como o nome já diz é usado como contador, principalmente para controlar loops.
-* [EDX](#EDX) - Chamado de registrador de "DADOS" é usado geralmente para guardar o endereço de uma variável na memória.
+![Registradores e sub-registradores]({{'images/img13.png' | absolute_url}})
 
-* ESI e EDI - Respectivamente "Source Index" e "Destination Index", são menos usados do que os registradores usados anteriormente.
-Geralmente usa-se ESI e EDI para movimentação de dados, com ESI guardando o endereço da fonte de uma variável e EDI guardando o endereço de destino. Não podem ser acessados em nível de Byte.
+Por exemplo:
 
-* ESP e EBP - Respectivamente "Stack Pointer" e "Base Pointer", só podem ser usados para manipulação da pilha. O registrador ESP guarda a referência para o topo da pilha, enquanto o registrador EBP é usado para "ANDAR" pela pilha.
+- `EAX` representa o registrador completo de 32 bits;
+- `AX` representa os 16 bits inferiores;
+- `AH` representa os 8 bits mais altos de `AX`;
+- `AL` representa os 8 bits mais baixos de `AX`.
 
-Atualmente todos os programas fazem uso da pilha em tempo de execução, porem nas linguagens de alto nível é algo que não necessitamos nos preocupar, em como se comporta a pilha.
+## Registradores mais usados
 
-Já em Assembly, o programador necessita saber trabalhar com a pilha pois ela é uma ferramenta importante.
+- **EAX**: conhecido como acumulador, costuma ser usado em operações aritméticas, retorno de funções e resultado de syscalls.
+- **EBX**: frequentemente usado como registrador base para armazenar dados ou endereços.
+- **ECX**: muito usado como contador em loops e repetições.
+- **EDX**: normalmente aparece em operações com dados adicionais, multiplicação, divisão e manipulação de endereços.
 
-A pilha é uma área de dados existente na memória em tempo de execução, no qual seu programa pode armazenar dados temporariamente.
+## Registradores de índice
 
-### As principais funcionalidades da pilha são:
+- **ESI** (*Source Index*): geralmente aponta para a origem de um bloco de dados.
+- **EDI** (*Destination Index*): geralmente aponta para o destino de um bloco de dados.
 
-* Preservar valores de registradores em funções.
-* Preservar dados na memória.
-* Transferir dados sem usar registradores.
-* Reverter a ordem dos dados.
-* Chamar outras funções e depois retornar.
-* Passar parâmetros para funções.
+Esses dois registradores aparecem bastante em rotinas de movimentação de memória e manipulação de strings. Diferentemente de `EAX`, `EBX`, `ECX` e `EDX`, eles não possuem acesso em nível de byte na forma clássica da IA-32.
+
+## Registradores ligados à pilha
+
+- **ESP** (*Stack Pointer*): aponta para o topo da pilha.
+- **EBP** (*Base Pointer*): costuma ser usado como referência estável para acessar parâmetros e variáveis locais dentro de funções.
+
+Em Assembly, compreender a pilha é essencial. Ela é usada o tempo todo pelo programa e pelo sistema, mesmo quando isso fica escondido em linguagens de mais alto nível.
+
+## O papel da pilha
+
+A pilha é uma área de memória utilizada em tempo de execução para armazenar dados temporários. Ela é importante para várias tarefas:
+
+- preservar valores de registradores durante chamadas de função;
+- armazenar dados temporários;
+- passar parâmetros para funções;
+- guardar endereços de retorno;
+- organizar chamadas encadeadas;
+- inverter a ordem de valores com operações como `push` e `pop`.
+
+## Resumo visual
 
 ![Registradores]({{'/images/registers.png' | absolute_url}})
+
+## Observação prática
+
+Embora todos esses registradores possam ser manipulados diretamente, cada um costuma aparecer com papéis recorrentes em exemplos e convenções de chamada. Aprender esses papéis ajuda a ler código Assembly com mais rapidez, mas é importante lembrar que, em muitos casos, o uso real depende da convenção adotada e da lógica do programa.

@@ -1,7 +1,9 @@
 theme: jekyll-theme-hacker
 title: Assembly Crash Course
 description: Curso de assembly feito de forma simples e prática.
+repository_url: https://github.com/Assembly-Area55/tinyos.github.io
 google_analytics: UA-110108060-1
 markdown: kramdown
 highlighter: rouge
 input: GFM
+lang: pt-BR

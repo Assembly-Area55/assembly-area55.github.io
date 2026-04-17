@@ -1,0 +1,54 @@
+- title: Comece aqui
+  links:
+    - label: Ambiente e requisitos
+      url: /requisitos
+      description: Monte um ambiente Linux com NASM, ld, gcc e ferramentas auxiliares.
+    - label: Linguagem Assembly
+      url: /linguagem.html
+      description: Conceitos, tipos de dados e visão geral da arquitetura IA-32.
+    - label: Registradores
+      url: /registradores
+      description: Referência rápida dos registradores e do uso da pilha.
+- title: Ferramentas
+  links:
+    - label: NASM
+      url: /nasm
+      description: Estrutura do código e papel do assembler no fluxo de build.
+    - label: Formatos de saída do NASM
+      url: /nasm-output-format
+      description: Resumo dos formatos suportados e onde cada um faz sentido.
+    - label: Makefile
+      url: /using-makefile
+      description: Automatize compilação, ligação e tarefas repetitivas.
+    - label: Estrutura do Makefile
+      url: /using-makefile-1
+      description: Entenda targets, dependências e recipes.
+- title: Referência
+  links:
+    - label: Transferência de dados
+      url: /data-transfer-instructions
+      description: Instruções de movimentação, stack e conversão.
+    - label: Controle de fluxo
+      url: /control-transfer-instructions
+      description: Saltos, loops, chamadas e retorno.
+    - label: Syscalls
+      url: /syscalls
+      description: Tabela inicial de chamadas de sistema para Linux 32-bit.
+- title: Exemplos
+  links:
+    - label: Hello
+      url: https://github.com/Assembly-Area55/assembly-area55.github.io/tree/master/src/hello
+      external: true
+      description: Exemplo mínimo com `_start`.
+    - label: Uppercase
+      url: https://github.com/Assembly-Area55/assembly-area55.github.io/blob/master/src/uppercase/uppercase.asm
+      external: true
+      description: Manipulação de strings em baixo nível.
+    - label: Getpid
+      url: https://github.com/Assembly-Area55/assembly-area55.github.io/tree/master/src/getpid
+      external: true
+      description: Acesso direto a syscall.
+    - label: Cpuid
+      url: https://github.com/Assembly-Area55/assembly-area55.github.io/tree/master/src/cpuid
+      external: true
+      description: Consulta de capacidades do processador.
